@@ -22,7 +22,7 @@
     "decode:hilbert": "npx ts-node text2pix.ts index.hilbert.png",
     "test:hilbert": "npm run encode:hilbert && npm run decode:hilbert",
 
-    "test:all": "npm run test:row && npm run test:strip && npm run test:hilbert"
+    "test:all": "npm run test && npm run test:row && npm run test:strip && npm run test:hilbert"
   },
   "dependencies": {
     "@dotenvx/dotenvx": "^1.64.0",
