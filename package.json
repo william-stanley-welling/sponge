@@ -1,0 +1,33 @@
+{
+  "name": "sponge",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "type": "module",
+  "main": "text2pix.ts",
+  "scripts": {
+    "encode": "npx ts-node text2pix.ts index.html",
+    "decode": "npx ts-node text2pix.ts index.png",
+    "test": "npm run encode && npm run decode",
+
+    "encode:row": "npx ts-node text2pix.ts index.html --output index.row",
+    "decode:row": "npx ts-node text2pix.ts index.row.png",
+    "test:row": "npm run encode:row && npm run decode:row",
+
+    "encode:strip": "npx ts-node text2pix.ts index.html --placement strip --strip-height 1024 --output index.strip",
+    "decode:strip": "npx ts-node text2pix.ts index.strip.png",
+    "test:strip": "npm run encode:strip && npm run decode:strip",
+
+    "encode:hilbert": "npx ts-node text2pix.ts index.html --placement hilbert --output index.hilbert",
+    "decode:hilbert": "npx ts-node text2pix.ts index.hilbert.png",
+    "test:hilbert": "npm run encode:hilbert && npm run decode:hilbert",
+
+    "test:all": "npm run test:row && npm run test:strip && npm run test:hilbert"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.64.0",
+    "@types/pngjs": "^6.0.5",
+    "compromise": "^14.15.0",
+    "pngjs": "^7.0.0"
+  }
+}
